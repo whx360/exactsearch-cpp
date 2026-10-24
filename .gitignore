@@ -1,0 +1,17 @@
+/build*/
+/.tools/
+/data/raw/
+/data/generated/
+/results/
+__pycache__/
+*.py[cod]
+*.o
+*.obj
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.tmp
+.DS_Store
+.idea/
+.vscode/

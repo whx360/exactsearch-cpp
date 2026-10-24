@@ -1,0 +1,788 @@
+{
+  "schema_version": 1,
+  "note": "Curated export of measured runs. Machine-specific absolute command prefixes removed. CSVs and summary bytes preserved; published source hashes cover the unchanged C++ implementation and tests. Python tooling and CMake packaging were updated after these runs.",
+  "serial_run_id": "20261023T100906.944802Z",
+  "parallel_run_id": "20261023T100925.535398Z",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "logical_cpus": 16
+  },
+  "hardware": {
+    "cpu": "AMD Ryzen 7 7435H",
+    "logical_cpus": 16,
+    "physical_memory_gib": 15.74,
+    "gpu_used": false
+  },
+  "compiler": {
+    "url": "https://github.com/skeeto/w64devkit/releases/download/v2.0.0/w64devkit-x64-2.0.0.exe",
+    "bytes": 36581551,
+    "sha256": "cea23fc56a5e61457492113a8377c8ab0c42ed82303fcc454ccd1963a46f8ce1",
+    "note": "Local identity hash; verify publisher detached signature before using bundle.",
+    "compiler": "GCC 14.2.0",
+    "distribution": "w64devkit 2.0.0 x64",
+    "signature_verified": true,
+    "verification_method": "GPG detached signature, Good signature observed before extraction",
+    "key_fingerprint": "5EEB8C8D5069C4E9B94AA852AFD1503A8C8FF42A",
+    "key_source": "https://github.com/skeeto.gpg",
+    "compiler_sha256": "7d8c562c247c681908adc4bc463084c55426999abfd5922f1838189062258f24",
+    "release_flags": [
+      "-std=c++17",
+      "-O3",
+      "-DNDEBUG",
+      "-static",
+      "-pthread",
+      "-ffp-contract=off",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic"
+    ],
+    "platform": "Windows-11-10.0.26300-SP0",
+    "debug_verified": true,
+    "debug_flags": [
+      "-O0",
+      "-g",
+      "-D_GLIBCXX_ASSERTIONS"
+    ],
+    "cmake_linux_msvc_verified": false
+  },
+  "measurement": {
+    "engines": [
+      "sort",
+      "flat",
+      "kdtree"
+    ],
+    "benchmark_processes_concurrent": 1,
+    "engine_order": "CLI rotates engine order by repeat; three warmup queries per engine batch",
+    "timing_scope": "search call only; reference generation, correctness check, checksum, destruction and tree build excluded",
+    "query_order": "fixed input-file order",
+    "clock_unit": "CLI steady_clock microseconds",
+    "correctness": "every timed and warmup query compared with CLI full-sort reference; all checksums must agree",
+    "limitations": "one host/session; fixed-seed synthetic data are controlled experiments, not real descriptors"
+  },
+  "synthetic_generation": {
+    "seed": 42,
+    "bit_generator": "PCG64",
+    "numpy_version": "2.3.5",
+    "distribution": "uniform(-1,1), float64 draw then float32 cast",
+    "draw_order": [
+      "base[10000,128]",
+      "queries[128,128]"
+    ],
+    "dtype": "little-endian float32",
+    "base_raw_sha256": "8900850be8fb1717ad18b31a66da21bee5b4f9a6608568644b6a8a12a6681aed",
+    "queries_raw_sha256": "92f9e6c13d48ae9a5dc825317a2aee184014c07fde67b30726772e32cbe0dd5e",
+    "dimension_control": "each d uses the first d columns of these same parent arrays",
+    "scale_control": "N=1000 is a prefix; N=50000 retains the first 10000 rows and appends seed43 rows",
+    "identity_sha256": "83edf026d2d91d9f47d154b93fc2c31d3ed3c037704dd3d422084a850d084ad5"
+  },
+  "scale_extension_generation": {
+    "seed": 43,
+    "bit_generator": "PCG64",
+    "shape": [
+      40000,
+      16
+    ],
+    "raw_sha256": "23ee40a67bc26c01544fe20cf80e5f65a83d3afd2cff786d5023f7ffed1dab5b",
+    "expanded_base_raw_sha256": "a38b104c54676ec0e8ff82a2a7d6671a44da5b775674165d50bb9e4c8c4e15bd"
+  },
+  "input_files": {
+    "data/generated/serial_seed42/base_n10000_d2.fvecs": {
+      "path": "data/generated/serial_seed42/base_n10000_d2.fvecs",
+      "rows": 10000,
+      "dim": 2,
+      "bytes": 120000,
+      "sha256": "8edbd6cd707be11e2999cccaa2783c38679f12aaff996c1217b355145cd01199",
+      "kind": "synthetic_uniform"
+    },
+    "data/generated/serial_seed42/queries_q128_d2.fvecs": {
+      "path": "data/generated/serial_seed42/queries_q128_d2.fvecs",
+      "rows": 128,
+      "dim": 2,
+      "bytes": 1536,
+      "sha256": "c913f1a02c822bcc96bfeee0b23040ac6f38af9dd9eb8ff8f851d010009c6fbb",
+      "kind": "synthetic_uniform"
+    },
+    "data/generated/serial_seed42/base_n10000_d4.fvecs": {
+      "path": "data/generated/serial_seed42/base_n10000_d4.fvecs",
+      "rows": 10000,
+      "dim": 4,
+      "bytes": 200000,
+      "sha256": "84b11f67648a12c8c85df9d59ad3793736734f59111df3b936886f524ff1aee4",
+      "kind": "synthetic_uniform"
+    },
+    "data/generated/serial_seed42/queries_q128_d4.fvecs": {
+      "path": "data/generated/serial_seed42/queries_q128_d4.fvecs",
+      "rows": 128,
+      "dim": 4,
+      "bytes": 2560,
+      "sha256": "98782c7836409a390b2db76a473437a142a05a64d37cfbf4d024aed07915fcef",
+      "kind": "synthetic_uniform"
+    },
+    "data/generated/serial_seed42/base_n10000_d8.fvecs": {
+      "path": "data/generated/serial_seed42/base_n10000_d8.fvecs",
+      "rows": 10000,
+      "dim": 8,
+      "bytes": 360000,
+      "sha256": "61b9a6ecb7fdf095ba2359ec13b1af639a07ecac89a404070fda8255fc90e26c",
+      "kind": "synthetic_uniform"
+    },
+    "data/generated/serial_seed42/queries_q128_d8.fvecs": {
+      "path": "data/generated/serial_seed42/queries_q128_d8.fvecs",
+      "rows": 128,
+      "dim": 8,
+      "bytes": 4608,
+      "sha256": "286495346b4cde8cae3ce2875336b07e7953e327da508a2c82a66f7d98c6b45c",
+      "kind": "synthetic_uniform"
+    },
+    "data/generated/serial_seed42/base_n10000_d16.fvecs": {
+      "path": "data/generated/serial_seed42/base_n10000_d16.fvecs",
+      "rows": 10000,
+      "dim": 16,
+      "bytes": 680000,
+      "sha256": "99f7ba8060df6a9afd7423d7e84964e88806431eb946975845a73af40e4d4334",
+      "kind": "synthetic_uniform"
+    },
+    "data/generated/serial_seed42/queries_q128_d16.fvecs": {
+      "path": "data/generated/serial_seed42/queries_q128_d16.fvecs",
+      "rows": 128,
+      "dim": 16,
+      "bytes": 8704,
+      "sha256": "2af1aa3fbb705fc87f0d480c370563c7cafafe2512e33180d62855da0adc68b0",
+      "kind": "synthetic_uniform"
+    },
+    "data/generated/serial_seed42/base_n10000_d32.fvecs": {
+      "path": "data/generated/serial_seed42/base_n10000_d32.fvecs",
+      "rows": 10000,
+      "dim": 32,
+      "bytes": 1320000,
+      "sha256": "43805b81f4fc0452ad22fd6b49bdea60081d8c40477e9e515d4a5c79c1fe7314",
+      "kind": "synthetic_uniform"
+    },
+    "data/generated/serial_seed42/queries_q128_d32.fvecs": {
+      "path": "data/generated/serial_seed42/queries_q128_d32.fvecs",
+      "rows": 128,
+      "dim": 32,
+      "bytes": 16896,
+      "sha256": "c387ca729a87a8619003f6607164fe6aa1e4d0b0eab13cce712d07b57f2854db",
+      "kind": "synthetic_uniform"
+    },
+    "data/generated/serial_seed42/base_n10000_d64.fvecs": {
+      "path": "data/generated/serial_seed42/base_n10000_d64.fvecs",
+      "rows": 10000,
+      "dim": 64,
+      "bytes": 2600000,
+      "sha256": "684c4ec18c4228916e214e19daf8214df5c5734e2e4d492d43975f976168f451",
+      "kind": "synthetic_uniform"
+    },
+    "data/generated/serial_seed42/queries_q128_d64.fvecs": {
+      "path": "data/generated/serial_seed42/queries_q128_d64.fvecs",
+      "rows": 128,
+      "dim": 64,
+      "bytes": 33280,
+      "sha256": "c4ca228e21707ac6f5d95942e2068d4c1a2c9d13cdec318acbc9bc472693ce97",
+      "kind": "synthetic_uniform"
+    },
+    "data/generated/serial_seed42/base_n10000_d128.fvecs": {
+      "path": "data/generated/serial_seed42/base_n10000_d128.fvecs",
+      "rows": 10000,
+      "dim": 128,
+      "bytes": 5160000,
+      "sha256": "827b13522b9d56da3e3869962b2cca797ea8e58b067a165b4d9cd2dcb96be998",
+      "kind": "synthetic_uniform"
+    },
+    "data/generated/serial_seed42/queries_q128_d128.fvecs": {
+      "path": "data/generated/serial_seed42/queries_q128_d128.fvecs",
+      "rows": 128,
+      "dim": 128,
+      "bytes": 66048,
+      "sha256": "f3b7485a5b0986ae6981874ddc8929a330482ecd9698eb3a34f2ea30a452b0bd",
+      "kind": "synthetic_uniform"
+    },
+    "data/generated/serial_seed42/base_n1000_d16.fvecs": {
+      "path": "data/generated/serial_seed42/base_n1000_d16.fvecs",
+      "rows": 1000,
+      "dim": 16,
+      "bytes": 68000,
+      "sha256": "3bcea7cbf41910342e96181edae034e1d21c8d20ee28b6d580a56dba6578b339",
+      "kind": "synthetic_uniform"
+    },
+    "data/generated/serial_seed42/base_n50000_d16.fvecs": {
+      "path": "data/generated/serial_seed42/base_n50000_d16.fvecs",
+      "rows": 50000,
+      "dim": 16,
+      "bytes": 3400000,
+      "sha256": "ed148c353d029029c4ec1df79969019685660ab4d80450127b9c890c0f19954e",
+      "kind": "synthetic_uniform"
+    },
+    "data/raw/optdigits/base.fvecs": {
+      "path": "data/raw/optdigits/base.fvecs",
+      "rows": 1400,
+      "dim": 64,
+      "bytes": 364000,
+      "sha256": "54dbee15c408bd268d321277b57db9de1dfb01c3c9163903548c108b8c15d8eb",
+      "kind": "real_optdigits_subset"
+    },
+    "data/raw/optdigits/queries.fvecs": {
+      "path": "data/raw/optdigits/queries.fvecs",
+      "rows": 397,
+      "dim": 64,
+      "bytes": 103220,
+      "sha256": "dc89a59f4e389f905ef0578d106f3e471841a0c4281f65ed5ce91981b04f077b",
+      "kind": "real_optdigits_subset"
+    }
+  },
+  "configurations": [
+    {
+      "id": "uniform_n10000_d2_q128_k10_leaf16",
+      "dataset": "synthetic_uniform_nested_seed42",
+      "data_kind": "synthetic_uniform",
+      "intervention": "dimension",
+      "n": 10000,
+      "dim": 2,
+      "queries": 128,
+      "k": 10,
+      "leaf": 16,
+      "repeats": 5,
+      "engines": [
+        "sort",
+        "flat",
+        "kdtree"
+      ],
+      "base": {
+        "path": "data/generated/serial_seed42/base_n10000_d2.fvecs",
+        "rows": 10000,
+        "dim": 2,
+        "bytes": 120000,
+        "sha256": "8edbd6cd707be11e2999cccaa2783c38679f12aaff996c1217b355145cd01199",
+        "kind": "synthetic_uniform"
+      },
+      "query_input": {
+        "path": "data/generated/serial_seed42/queries_q128_d2.fvecs",
+        "rows": 128,
+        "dim": 2,
+        "bytes": 1536,
+        "sha256": "c913f1a02c822bcc96bfeee0b23040ac6f38af9dd9eb8ff8f851d010009c6fbb",
+        "kind": "synthetic_uniform"
+      }
+    },
+    {
+      "id": "uniform_n10000_d4_q128_k10_leaf16",
+      "dataset": "synthetic_uniform_nested_seed42",
+      "data_kind": "synthetic_uniform",
+      "intervention": "dimension",
+      "n": 10000,
+      "dim": 4,
+      "queries": 128,
+      "k": 10,
+      "leaf": 16,
+      "repeats": 5,
+      "engines": [
+        "sort",
+        "flat",
+        "kdtree"
+      ],
+      "base": {
+        "path": "data/generated/serial_seed42/base_n10000_d4.fvecs",
+        "rows": 10000,
+        "dim": 4,
+        "bytes": 200000,
+        "sha256": "84b11f67648a12c8c85df9d59ad3793736734f59111df3b936886f524ff1aee4",
+        "kind": "synthetic_uniform"
+      },
+      "query_input": {
+        "path": "data/generated/serial_seed42/queries_q128_d4.fvecs",
+        "rows": 128,
+        "dim": 4,
+        "bytes": 2560,
+        "sha256": "98782c7836409a390b2db76a473437a142a05a64d37cfbf4d024aed07915fcef",
+        "kind": "synthetic_uniform"
+      }
+    },
+    {
+      "id": "uniform_n10000_d8_q128_k10_leaf16",
+      "dataset": "synthetic_uniform_nested_seed42",
+      "data_kind": "synthetic_uniform",
+      "intervention": "dimension",
+      "n": 10000,
+      "dim": 8,
+      "queries": 128,
+      "k": 10,
+      "leaf": 16,
+      "repeats": 5,
+      "engines": [
+        "sort",
+        "flat",
+        "kdtree"
+      ],
+      "base": {
+        "path": "data/generated/serial_seed42/base_n10000_d8.fvecs",
+        "rows": 10000,
+        "dim": 8,
+        "bytes": 360000,
+        "sha256": "61b9a6ecb7fdf095ba2359ec13b1af639a07ecac89a404070fda8255fc90e26c",
+        "kind": "synthetic_uniform"
+      },
+      "query_input": {
+        "path": "data/generated/serial_seed42/queries_q128_d8.fvecs",
+        "rows": 128,
+        "dim": 8,
+        "bytes": 4608,
+        "sha256": "286495346b4cde8cae3ce2875336b07e7953e327da508a2c82a66f7d98c6b45c",
+        "kind": "synthetic_uniform"
+      }
+    },
+    {
+      "id": "uniform_n10000_d16_q128_k10_leaf16",
+      "dataset": "synthetic_uniform_nested_seed42",
+      "data_kind": "synthetic_uniform",
+      "intervention": "dimension",
+      "n": 10000,
+      "dim": 16,
+      "queries": 128,
+      "k": 10,
+      "leaf": 16,
+      "repeats": 5,
+      "engines": [
+        "sort",
+        "flat",
+        "kdtree"
+      ],
+      "base": {
+        "path": "data/generated/serial_seed42/base_n10000_d16.fvecs",
+        "rows": 10000,
+        "dim": 16,
+        "bytes": 680000,
+        "sha256": "99f7ba8060df6a9afd7423d7e84964e88806431eb946975845a73af40e4d4334",
+        "kind": "synthetic_uniform"
+      },
+      "query_input": {
+        "path": "data/generated/serial_seed42/queries_q128_d16.fvecs",
+        "rows": 128,
+        "dim": 16,
+        "bytes": 8704,
+        "sha256": "2af1aa3fbb705fc87f0d480c370563c7cafafe2512e33180d62855da0adc68b0",
+        "kind": "synthetic_uniform"
+      }
+    },
+    {
+      "id": "uniform_n10000_d32_q128_k10_leaf16",
+      "dataset": "synthetic_uniform_nested_seed42",
+      "data_kind": "synthetic_uniform",
+      "intervention": "dimension",
+      "n": 10000,
+      "dim": 32,
+      "queries": 128,
+      "k": 10,
+      "leaf": 16,
+      "repeats": 5,
+      "engines": [
+        "sort",
+        "flat",
+        "kdtree"
+      ],
+      "base": {
+        "path": "data/generated/serial_seed42/base_n10000_d32.fvecs",
+        "rows": 10000,
+        "dim": 32,
+        "bytes": 1320000,
+        "sha256": "43805b81f4fc0452ad22fd6b49bdea60081d8c40477e9e515d4a5c79c1fe7314",
+        "kind": "synthetic_uniform"
+      },
+      "query_input": {
+        "path": "data/generated/serial_seed42/queries_q128_d32.fvecs",
+        "rows": 128,
+        "dim": 32,
+        "bytes": 16896,
+        "sha256": "c387ca729a87a8619003f6607164fe6aa1e4d0b0eab13cce712d07b57f2854db",
+        "kind": "synthetic_uniform"
+      }
+    },
+    {
+      "id": "uniform_n10000_d64_q128_k10_leaf16",
+      "dataset": "synthetic_uniform_nested_seed42",
+      "data_kind": "synthetic_uniform",
+      "intervention": "dimension",
+      "n": 10000,
+      "dim": 64,
+      "queries": 128,
+      "k": 10,
+      "leaf": 16,
+      "repeats": 5,
+      "engines": [
+        "sort",
+        "flat",
+        "kdtree"
+      ],
+      "base": {
+        "path": "data/generated/serial_seed42/base_n10000_d64.fvecs",
+        "rows": 10000,
+        "dim": 64,
+        "bytes": 2600000,
+        "sha256": "684c4ec18c4228916e214e19daf8214df5c5734e2e4d492d43975f976168f451",
+        "kind": "synthetic_uniform"
+      },
+      "query_input": {
+        "path": "data/generated/serial_seed42/queries_q128_d64.fvecs",
+        "rows": 128,
+        "dim": 64,
+        "bytes": 33280,
+        "sha256": "c4ca228e21707ac6f5d95942e2068d4c1a2c9d13cdec318acbc9bc472693ce97",
+        "kind": "synthetic_uniform"
+      }
+    },
+    {
+      "id": "uniform_n10000_d128_q128_k10_leaf16",
+      "dataset": "synthetic_uniform_nested_seed42",
+      "data_kind": "synthetic_uniform",
+      "intervention": "dimension",
+      "n": 10000,
+      "dim": 128,
+      "queries": 128,
+      "k": 10,
+      "leaf": 16,
+      "repeats": 5,
+      "engines": [
+        "sort",
+        "flat",
+        "kdtree"
+      ],
+      "base": {
+        "path": "data/generated/serial_seed42/base_n10000_d128.fvecs",
+        "rows": 10000,
+        "dim": 128,
+        "bytes": 5160000,
+        "sha256": "827b13522b9d56da3e3869962b2cca797ea8e58b067a165b4d9cd2dcb96be998",
+        "kind": "synthetic_uniform"
+      },
+      "query_input": {
+        "path": "data/generated/serial_seed42/queries_q128_d128.fvecs",
+        "rows": 128,
+        "dim": 128,
+        "bytes": 66048,
+        "sha256": "f3b7485a5b0986ae6981874ddc8929a330482ecd9698eb3a34f2ea30a452b0bd",
+        "kind": "synthetic_uniform"
+      }
+    },
+    {
+      "id": "uniform_n10000_d16_q128_k1_leaf16",
+      "dataset": "synthetic_uniform_nested_seed42",
+      "data_kind": "synthetic_uniform",
+      "intervention": "k",
+      "n": 10000,
+      "dim": 16,
+      "queries": 128,
+      "k": 1,
+      "leaf": 16,
+      "repeats": 5,
+      "engines": [
+        "sort",
+        "flat",
+        "kdtree"
+      ],
+      "base": {
+        "path": "data/generated/serial_seed42/base_n10000_d16.fvecs",
+        "rows": 10000,
+        "dim": 16,
+        "bytes": 680000,
+        "sha256": "99f7ba8060df6a9afd7423d7e84964e88806431eb946975845a73af40e4d4334",
+        "kind": "synthetic_uniform"
+      },
+      "query_input": {
+        "path": "data/generated/serial_seed42/queries_q128_d16.fvecs",
+        "rows": 128,
+        "dim": 16,
+        "bytes": 8704,
+        "sha256": "2af1aa3fbb705fc87f0d480c370563c7cafafe2512e33180d62855da0adc68b0",
+        "kind": "synthetic_uniform"
+      }
+    },
+    {
+      "id": "uniform_n10000_d16_q128_k100_leaf16",
+      "dataset": "synthetic_uniform_nested_seed42",
+      "data_kind": "synthetic_uniform",
+      "intervention": "k",
+      "n": 10000,
+      "dim": 16,
+      "queries": 128,
+      "k": 100,
+      "leaf": 16,
+      "repeats": 5,
+      "engines": [
+        "sort",
+        "flat",
+        "kdtree"
+      ],
+      "base": {
+        "path": "data/generated/serial_seed42/base_n10000_d16.fvecs",
+        "rows": 10000,
+        "dim": 16,
+        "bytes": 680000,
+        "sha256": "99f7ba8060df6a9afd7423d7e84964e88806431eb946975845a73af40e4d4334",
+        "kind": "synthetic_uniform"
+      },
+      "query_input": {
+        "path": "data/generated/serial_seed42/queries_q128_d16.fvecs",
+        "rows": 128,
+        "dim": 16,
+        "bytes": 8704,
+        "sha256": "2af1aa3fbb705fc87f0d480c370563c7cafafe2512e33180d62855da0adc68b0",
+        "kind": "synthetic_uniform"
+      }
+    },
+    {
+      "id": "uniform_n10000_d16_q128_k1000_leaf16",
+      "dataset": "synthetic_uniform_nested_seed42",
+      "data_kind": "synthetic_uniform",
+      "intervention": "k",
+      "n": 10000,
+      "dim": 16,
+      "queries": 128,
+      "k": 1000,
+      "leaf": 16,
+      "repeats": 5,
+      "engines": [
+        "sort",
+        "flat",
+        "kdtree"
+      ],
+      "base": {
+        "path": "data/generated/serial_seed42/base_n10000_d16.fvecs",
+        "rows": 10000,
+        "dim": 16,
+        "bytes": 680000,
+        "sha256": "99f7ba8060df6a9afd7423d7e84964e88806431eb946975845a73af40e4d4334",
+        "kind": "synthetic_uniform"
+      },
+      "query_input": {
+        "path": "data/generated/serial_seed42/queries_q128_d16.fvecs",
+        "rows": 128,
+        "dim": 16,
+        "bytes": 8704,
+        "sha256": "2af1aa3fbb705fc87f0d480c370563c7cafafe2512e33180d62855da0adc68b0",
+        "kind": "synthetic_uniform"
+      }
+    },
+    {
+      "id": "uniform_n10000_d8_q128_k10_leaf4",
+      "dataset": "synthetic_uniform_nested_seed42",
+      "data_kind": "synthetic_uniform",
+      "intervention": "leaf_size",
+      "n": 10000,
+      "dim": 8,
+      "queries": 128,
+      "k": 10,
+      "leaf": 4,
+      "repeats": 5,
+      "engines": [
+        "sort",
+        "flat",
+        "kdtree"
+      ],
+      "base": {
+        "path": "data/generated/serial_seed42/base_n10000_d8.fvecs",
+        "rows": 10000,
+        "dim": 8,
+        "bytes": 360000,
+        "sha256": "61b9a6ecb7fdf095ba2359ec13b1af639a07ecac89a404070fda8255fc90e26c",
+        "kind": "synthetic_uniform"
+      },
+      "query_input": {
+        "path": "data/generated/serial_seed42/queries_q128_d8.fvecs",
+        "rows": 128,
+        "dim": 8,
+        "bytes": 4608,
+        "sha256": "286495346b4cde8cae3ce2875336b07e7953e327da508a2c82a66f7d98c6b45c",
+        "kind": "synthetic_uniform"
+      }
+    },
+    {
+      "id": "uniform_n10000_d8_q128_k10_leaf64",
+      "dataset": "synthetic_uniform_nested_seed42",
+      "data_kind": "synthetic_uniform",
+      "intervention": "leaf_size",
+      "n": 10000,
+      "dim": 8,
+      "queries": 128,
+      "k": 10,
+      "leaf": 64,
+      "repeats": 5,
+      "engines": [
+        "sort",
+        "flat",
+        "kdtree"
+      ],
+      "base": {
+        "path": "data/generated/serial_seed42/base_n10000_d8.fvecs",
+        "rows": 10000,
+        "dim": 8,
+        "bytes": 360000,
+        "sha256": "61b9a6ecb7fdf095ba2359ec13b1af639a07ecac89a404070fda8255fc90e26c",
+        "kind": "synthetic_uniform"
+      },
+      "query_input": {
+        "path": "data/generated/serial_seed42/queries_q128_d8.fvecs",
+        "rows": 128,
+        "dim": 8,
+        "bytes": 4608,
+        "sha256": "286495346b4cde8cae3ce2875336b07e7953e327da508a2c82a66f7d98c6b45c",
+        "kind": "synthetic_uniform"
+      }
+    },
+    {
+      "id": "uniform_n1000_d16_q128_k10_leaf16",
+      "dataset": "synthetic_uniform_nested_seed42",
+      "data_kind": "synthetic_uniform",
+      "intervention": "corpus_size",
+      "n": 1000,
+      "dim": 16,
+      "queries": 128,
+      "k": 10,
+      "leaf": 16,
+      "repeats": 5,
+      "engines": [
+        "sort",
+        "flat",
+        "kdtree"
+      ],
+      "base": {
+        "path": "data/generated/serial_seed42/base_n1000_d16.fvecs",
+        "rows": 1000,
+        "dim": 16,
+        "bytes": 68000,
+        "sha256": "3bcea7cbf41910342e96181edae034e1d21c8d20ee28b6d580a56dba6578b339",
+        "kind": "synthetic_uniform"
+      },
+      "query_input": {
+        "path": "data/generated/serial_seed42/queries_q128_d16.fvecs",
+        "rows": 128,
+        "dim": 16,
+        "bytes": 8704,
+        "sha256": "2af1aa3fbb705fc87f0d480c370563c7cafafe2512e33180d62855da0adc68b0",
+        "kind": "synthetic_uniform"
+      }
+    },
+    {
+      "id": "uniform_n50000_d16_q128_k10_leaf16",
+      "dataset": "synthetic_uniform_nested_seed42",
+      "data_kind": "synthetic_uniform",
+      "intervention": "corpus_size",
+      "n": 50000,
+      "dim": 16,
+      "queries": 128,
+      "k": 10,
+      "leaf": 16,
+      "repeats": 5,
+      "engines": [
+        "sort",
+        "flat",
+        "kdtree"
+      ],
+      "base": {
+        "path": "data/generated/serial_seed42/base_n50000_d16.fvecs",
+        "rows": 50000,
+        "dim": 16,
+        "bytes": 3400000,
+        "sha256": "ed148c353d029029c4ec1df79969019685660ab4d80450127b9c890c0f19954e",
+        "kind": "synthetic_uniform"
+      },
+      "query_input": {
+        "path": "data/generated/serial_seed42/queries_q128_d16.fvecs",
+        "rows": 128,
+        "dim": 16,
+        "bytes": 8704,
+        "sha256": "2af1aa3fbb705fc87f0d480c370563c7cafafe2512e33180d62855da0adc68b0",
+        "kind": "synthetic_uniform"
+      }
+    },
+    {
+      "id": "optdigits_n1400_d64_q397_k10_leaf16",
+      "dataset": "optdigits_real_subset",
+      "data_kind": "real_optdigits_subset",
+      "intervention": "real_descriptor_validation",
+      "n": 1400,
+      "dim": 64,
+      "queries": 397,
+      "k": 10,
+      "leaf": 16,
+      "repeats": 5,
+      "engines": [
+        "sort",
+        "flat",
+        "kdtree"
+      ],
+      "base": {
+        "path": "data/raw/optdigits/base.fvecs",
+        "rows": 1400,
+        "dim": 64,
+        "bytes": 364000,
+        "sha256": "54dbee15c408bd268d321277b57db9de1dfb01c3c9163903548c108b8c15d8eb",
+        "kind": "real_optdigits_subset"
+      },
+      "query_input": {
+        "path": "data/raw/optdigits/queries.fvecs",
+        "rows": 397,
+        "dim": 64,
+        "bytes": 103220,
+        "sha256": "dc89a59f4e389f905ef0578d106f3e471841a0c4281f65ed5ce91981b04f077b",
+        "kind": "real_optdigits_subset"
+      }
+    }
+  ],
+  "dataset": {
+    "source_url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/1.5.2/sklearn/datasets/data/digits.csv.gz",
+    "source_sha256": "09f66e6debdee2cd2b5ae59e0d6abbb73fc2b0e0185d2e1957e9ebb51e23aa22",
+    "files": [
+      {
+        "name": "base.fvecs",
+        "rows": 1400,
+        "dim": 64,
+        "bytes": 364000,
+        "sha256": "54dbee15c408bd268d321277b57db9de1dfb01c3c9163903548c108b8c15d8eb"
+      },
+      {
+        "name": "queries.fvecs",
+        "rows": 397,
+        "dim": 64,
+        "bytes": 103220,
+        "sha256": "dc89a59f4e389f905ef0578d106f3e471841a0c4281f65ed5ce91981b04f077b"
+      }
+    ],
+    "hash_note": "Locally computed identity hashes; not a publisher signature.",
+    "citation": "Alpaydin, E. & Kaynak, C. (1998), Optical Recognition of Handwritten Digits, UCI, DOI 10.24432/C50P49",
+    "license": "UCI dataset CC BY 4.0; source subset distributed in scikit-learn 1.5.2 (BSD-3-Clause project).",
+    "split": "1797-row scikit-learn subset only; shuffled source IDs with Python random seed 42; first 1400 corpus, remaining 397 queries. Labels excluded from distance. Not original UCI train/test split.",
+    "scope": "Exact nearest-vector retrieval; no model training, semantic-quality or classification-accuracy claim."
+  },
+  "serial_executable_sha256": "6bb4b50263fee2eb68a6c54655f7bf9d9216393de7e6016f7eef7886ba942122",
+  "parallel_executable_sha256": "78fe21b6977f43130484f277e29363550c2bba83132f064036e92a95b322d2d7",
+  "source_sha256": {
+    "src/batch.cpp": "8f8a8d1d9fd1ba3bd587b8b363799a6e33caf1906ee2809c7b025c121c84808f",
+    "src/batch_bench.cpp": "7be03f1c2d0da3a6f50feef4817011d6fa0e9aa94a7126b3255a05a5645cf06f",
+    "src/entry.cpp": "edcacd7b22a3098c8c06f539b31e666dbf864a6624c33eca99bb95c9ad16f474",
+    "src/io.cpp": "a7cc4b2f449aa4ddff7acfd47434c92e8f40b0391fb4ba941228693b5113bc30",
+    "src/main.cpp": "1bac4873bf6c19ddafa1c0935b9a89f43760cf4b5f602dc04b14ac293b403936",
+    "src/profile.cpp": "ae3826cf67eb2f3d218c6c7eeb8831b53c284499c6466212fdb8b50ad5c79d14",
+    "src/search.cpp": "95d4cf8b2dbafee28e0f8780538e8ff19a376fc03230991b0784be0d931c3785",
+    "include/exactsearch/batch.hpp": "0a3507e1ee406974260781d3bc2fe811959e6ec7843e88fe64854b1324ec4afa",
+    "include/exactsearch/io.hpp": "2bc58eb10c516cf59f2c23e9e2b77c2f44ea00111ac379cc069f9d95d18dfb4f",
+    "include/exactsearch/search.hpp": "a8fd69982d8d1c432bdeee4403e9bf52c81ccb31d4c69da1009e0308c06fd048",
+    "tests/test_batch.cpp": "2c7d4df1ba14746bdc8c31c497ca59237665178c93a1dcb72c365f430d8d88b1",
+    "tests/test_io_batch.cpp": "b0aea3da96d9d4e449dc84d33a66d9c669021c26278b6d9d96135b1e8f7e7a56",
+    "tests/test_search.cpp": "3bd9d99f428f24560f699d3ecb1ec59c9172df532efa3584b3a88f61f39c6035"
+  },
+  "files_sha256": {
+    "parallel.csv": "5dd9314d46ceac33e3237cf11a3eb314e035a9b1fd0f659a376be8bc1633da7c",
+    "parallel_summary.json": "20ec2ccdf9fd33b5b90582009cdac4d6d790c84c2fe3dddf9f4c362d7b0a918d",
+    "profile.csv": "20ba0cfaab8d88b5618be8a05f35e9e49ec0d6b572d3f49c5b4e689526ba42a9",
+    "serial.csv": "1388e17664832f037890f4714e89a1e338732e0cc037778606afb007b2005c3a",
+    "serial_summary.json": "adc310ced057966826a71b1c2de977ca653d824bb6a39ef42c797134b5b2b6f9"
+  },
+  "limitations": [
+    "One host/session, no core affinity or fixed CPU frequency.",
+    "No ASan/TSan or hardware performance-counter measurements in the archived run.",
+    "Serial per-query timing and batch API wall time are different scopes."
+  ]
+}
